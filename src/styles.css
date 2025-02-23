@@ -557,7 +557,7 @@ body {
 }
 
 .feature {
-  border-top: 2px solid #222; /* Reduced from 8px to 2px for slimmer lines */
+  border-top: 1px solid #333; /* Reduced to 1px and lighter color for subtlety */
   padding: 2rem 1rem;
 }
 
@@ -687,7 +687,7 @@ body {
 }
 
 .FAQ__list__container {
-  border-top: 2px solid #222; /* Reduced from 8px to 2px for slimmer lines */
+  border-top: 1px solid #333; /* Reduced to 1px and lighter color for subtlety */
   padding: 2rem 0;
 }
 
