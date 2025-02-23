@@ -16,7 +16,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
   <style>
-    #loader-container {
+    #netflix-loader-container {
       position: fixed;
       top: 0;
       left: 0;
@@ -29,12 +29,39 @@
       align-items: center;
       transition: opacity 0.5s ease-out;
     }
-    #loader-container.hidden {
+    #netflix-loader-container.hidden {
       opacity: 0;
       pointer-events: none;
     }
+    #tezas-loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      z-index: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
+    #tezas-loader-container.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #tezas-loader-container.visible {
+      opacity: 1;
+    }
     .netflixintro {
-      width: 200px; /* Reduced from 300px to scale down overall size */
+      width: 300px;
+      height: 300px;
+      position: relative;
+      background-color: #000;
+    }
+    .tezasintro {
+      width: 600px; /* Wider to accommodate full text */
       height: 200px;
       position: relative;
       background-color: #000;
@@ -49,7 +76,8 @@
   </style>
 </head>
 <body>
-  <div id="loader-container">
+  <!-- Netflix "T" Loader -->
+  <div id="netflix-loader-container">
     <div class="netflixintro" data-letter="T">
       <div class="helper-1">
         <div class="effect-brush">
@@ -120,6 +148,37 @@
     </div>
   </div>
 
+  <!-- TEZAS 2025 Loader -->
+  <div id="tezas-loader-container">
+    <div class="tezasintro" data-text="TEZAS 2025">
+      <div class="helper-tezas">
+        <div class="effect-brush-tezas">
+          <span class="fur-1"></span>
+          <span class="fur-2"></span>
+          <span class="fur-3"></span>
+          <span class="fur-4"></span>
+          <span class="fur-5"></span>
+          <span class="fur-6"></span>
+          <span class="fur-7"></span>
+          <span class="fur-8"></span>
+          <span class="fur-9"></span>
+          <span class="fur-10"></span>
+        </div>
+        <div class="effect-lumieres-tezas">
+          <span class="lamp-1"></span>
+          <span class="lamp-2"></span>
+          <span class="lamp-3"></span>
+          <span class="lamp-4"></span>
+          <span class="lamp-5"></span>
+          <span class="lamp-6"></span>
+          <span class="lamp-7"></span>
+          <span class="lamp-8"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Site Content -->
   <div id="main-content">
     <header>
       <nav class="navbar">
@@ -459,20 +518,33 @@
     </footer>
   </div>
 
+  <!-- Combined Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const loader = document.getElementById("loader-container");
+      const netflixLoader = document.getElementById("netflix-loader-container");
+      const tezasLoader = document.getElementById("tezas-loader-container");
       const mainContent = document.getElementById("main-content");
 
+      // Step 1: Netflix "T" loader for 4 seconds
       setTimeout(() => {
-        loader.classList.add("hidden");
+        netflixLoader.classList.add("hidden"); // Fade out Netflix loader
         setTimeout(() => {
-          loader.style.display = "none";
-          mainContent.classList.add("visible");
-        }, 500);
-      }, 4000);
+          netflixLoader.style.display = "none"; // Remove Netflix loader
+          tezasLoader.classList.add("visible"); // Show TEZAS loader
+
+          // Step 2: TEZAS loader for 4 seconds (same as Netflix duration)
+          setTimeout(() => {
+            tezasLoader.classList.add("hidden"); // Fade out TEZAS loader
+            setTimeout(() => {
+              tezasLoader.style.display = "none"; // Remove TEZAS loader
+              mainContent.classList.add("visible"); // Fade in main content
+            }, 500); // Match TEZAS fade-out duration
+          }, 4000); // TEZAS loader visible for 4s
+        }, 500); // Match Netflix fade-out duration
+      }, 4000); // Netflix loader visible for 4s
     });
 
+    // Countdown script (unchanged)
     const targetDate = new Date('2025-03-17T00:00:00');
   
     function getTimeSegmentElements(segmentElement) {
