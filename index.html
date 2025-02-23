@@ -6,7 +6,7 @@
   <meta name="description" content="Hello this is my first web page!." />
   <title>Tezas 2k25 Symposium</title>
   <link rel="icon" href="http://pngimg.com/uploads/netflix/small/netflix_PNG15.png"/>
-  <link rel="stylesheet" href="src/styles.css" /> <!-- Combined CSS -->
+  <link rel="stylesheet" href="src/styles.css" />
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/alpinejs" defer></script>
   <style>
-    /* Loader-specific styles */
     #loader-container {
       position: fixed;
       top: 0;
@@ -24,23 +23,22 @@
       width: 100%;
       height: 100%;
       background-color: #000;
-      z-index: 1000; /* Above main content */
+      z-index: 1000;
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: opacity 0.5s ease-out; /* Smooth fade-out */
+      transition: opacity 0.5s ease-out;
     }
     #loader-container.hidden {
       opacity: 0;
-      pointer-events: none; /* Prevent interaction after fade */
+      pointer-events: none;
     }
     .netflixintro {
-      width: 300px;
-      height: 300px;
+      width: 200px; /* Reduced from 300px to scale down overall size */
+      height: 200px;
       position: relative;
       background-color: #000;
     }
-    /* Main content hidden initially */
     #main-content {
       opacity: 0;
       transition: opacity 0.5s ease-in;
@@ -51,7 +49,6 @@
   </style>
 </head>
 <body>
-  <!-- Loader -->
   <div id="loader-container">
     <div class="netflixintro" data-letter="T">
       <div class="helper-1">
@@ -123,7 +120,6 @@
     </div>
   </div>
 
-  <!-- Main Site Content -->
   <div id="main-content">
     <header>
       <nav class="navbar">
@@ -463,23 +459,20 @@
     </footer>
   </div>
 
-  <!-- Combined Scripts -->
   <script>
-    // Loader fade-out and main content fade-in
     document.addEventListener("DOMContentLoaded", () => {
       const loader = document.getElementById("loader-container");
       const mainContent = document.getElementById("main-content");
 
       setTimeout(() => {
-        loader.classList.add("hidden"); // Start fade-out
+        loader.classList.add("hidden");
         setTimeout(() => {
-          loader.style.display = "none"; // Remove from layout after fade
-          mainContent.classList.add("visible"); // Fade in main content
-        }, 500); // Match fade-out duration (0.5s)
-      }, 4000); // Loader duration (4s)
+          loader.style.display = "none";
+          mainContent.classList.add("visible");
+        }, 500);
+      }, 4000);
     });
 
-    // Countdown script (unchanged)
     const targetDate = new Date('2025-03-17T00:00:00');
   
     function getTimeSegmentElements(segmentElement) {
