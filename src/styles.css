@@ -653,10 +653,6 @@ body {
   100% { transform: rotateX(0deg); }
 }
 
-<<<<<<< HEAD
-/* new foooter */
-=======
->>>>>>> a18cb3a (Updated index.html, styles, and added new files)
 footer {
   background-color: #222;
   color: #fff;
