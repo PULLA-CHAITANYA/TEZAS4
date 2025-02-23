@@ -1,4 +1,4 @@
-/* Loader Styles (from styles2.css) */
+/* Loader Styles */
 #loader-container {
   display: flex;
   flex-direction: column;
@@ -13,8 +13,8 @@
 #loader-container .netflixintro {
   display: block;
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 200px; /* Reduced from 300px */
+  height: 200px;
   overflow: hidden;
   animation-name: zoom-in;
   animation-delay: 0.5s;
@@ -46,10 +46,10 @@
 }
 
 #loader-container .netflixintro[data-letter="T"] .helper-1 {
-  width: 19.5%;
+  width: 10%; /* Reduced from 19.5% (~20px instead of ~58.5px) */
   height: 100%;
   background-color: rgba(228, 9, 19, 0.5);
-  left: 38%;
+  left: 45%; /* Adjusted to center the slimmer vertical line */
   top: 0;
   transform: rotate(180deg);
   animation-name: fading-lumieres-box;
@@ -71,10 +71,10 @@
 }
 
 #loader-container .netflixintro[data-letter="T"] .helper-2 {
-  width: 17.5%;
-  height: 54%;
-  left: 39%;
-  top: -55px;
+  width: 12%; /* Reduced from 17.5% (~24px instead of ~52.5px) */
+  height: 40%; /* Adjusted to keep proportions */
+  left: 44%; /* Adjusted to center the slimmer horizontal line */
+  top: -40px; /* Adjusted for slimmer "T" */
   transform: rotate(270deg);
   overflow: hidden;
 }
@@ -105,7 +105,7 @@
   background-color: #e40913;
   width: 100%;
   height: 70%;
-  box-shadow: 0px 0px 29px 24px #e40913;
+  box-shadow: 0px 0px 15px 10px #e40913; /* Reduced shadow for less bulge */
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush [class*="fur-"] {
@@ -117,61 +117,61 @@
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-1 {
   left: 0%;
-  width: 10%;
+  width: 5%; /* Reduced from 10% for slimmer strokes */
   background: linear-gradient(to bottom, #e40913 0%, #e40913 20%, rgba(0, 0, 0, 0) 80%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-2 {
-  left: 10%;
-  width: 10%;
+  left: 5%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 25%, rgba(0, 0, 0, 0) 85%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-3 {
-  left: 20%;
-  width: 10%;
+  left: 10%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 30%, rgba(0, 0, 0, 0) 90%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-4 {
-  left: 30%;
-  width: 10%;
+  left: 15%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 20%, rgba(0, 0, 0, 0) 80%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-5 {
-  left: 40%;
-  width: 10%;
+  left: 20%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 35%, rgba(0, 0, 0, 0) 95%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-6 {
-  left: 50%;
-  width: 10%;
+  left: 25%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 25%, rgba(0, 0, 0, 0) 85%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-7 {
-  left: 60%;
-  width: 10%;
+  left: 30%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 30%, rgba(0, 0, 0, 0) 90%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-8 {
-  left: 70%;
-  width: 10%;
+  left: 35%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 20%, rgba(0, 0, 0, 0) 80%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-9 {
-  left: 80%;
-  width: 10%;
+  left: 40%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 35%, rgba(0, 0, 0, 0) 95%);
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-brush .fur-10 {
-  left: 90%;
-  width: 10%;
+  left: 45%;
+  width: 5%;
   background: linear-gradient(to bottom, #e40913 0%, #e40913 25%, rgba(0, 0, 0, 0) 85%);
 }
 
@@ -190,7 +190,7 @@
   position: absolute;
   display: block;
   height: 100%;
-  box-shadow: 0px 0px 10px 0px rgba(228, 9, 19, 0.75);
+  box-shadow: 0px 0px 8px 4px rgba(228, 9, 19, 0.75); /* Slimmer shadow */
   background: var(--color);
 }
 
@@ -201,7 +201,7 @@
   width: 100%;
   height: 100%;
   background: var(--color);
-  box-shadow: 0px 0px 10px 0px rgba(228, 9, 19, 0.75);
+  box-shadow: 0px 0px 8px 4px rgba(228, 9, 19, 0.75); /* Slimmer shadow */
 }
 
 #loader-container .netflixintro [class*="helper-"] .effect-lumieres .lamp-1 {
@@ -334,7 +334,7 @@
   animation-duration: 5.5s;
 }
 
-/* Main Site Styles (from styles.css) */
+/* Main Site Styles */
 * {
   margin: 0;
   padding: 0;
@@ -1141,7 +1141,7 @@ footer {
   text-align: center;
 }
 
-/* Animations (shared between loader and main site where applicable) */
+/* Animations */
 @keyframes brush-moving {
   0% { transform: translateY(0); }
   100% { transform: translateY(-100%); }
