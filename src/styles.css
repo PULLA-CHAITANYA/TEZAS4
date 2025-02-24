@@ -370,7 +370,7 @@
 
 .tezas-logo {
   color: #E50914;
-  font-size: 4.5em; /* Increased for prominence, matching Bebas Neue size */
+  font-size: 4em;
   font-weight: 900;
   text-transform: uppercase;
   font-family: "Bebas Neue", "Arial Black", sans-serif; /* Netflix-style font with fallback */
@@ -392,7 +392,7 @@
 }
 
 .loader-progress {
-  width: 400px; /* Adjusted to match text length */
+  width: 300px; /* Adjusted to match text length */
   height: 4px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
@@ -409,7 +409,7 @@
   animation: load 2s cubic-bezier(0.4, 0, 0.2, 1) 1.5s forwards; /* Delayed to start after logo, runs once */
 }
 
-/* Adjusted timing to match 4.5s total TEZAS duration */
+/* Adjusted timing to match 2.5s total TEZAS duration */
 @keyframes load {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(0); }
