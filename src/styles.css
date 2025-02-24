@@ -342,7 +342,7 @@
   animation-duration: 5.5s;
 }
 
-/* TEZAS'2K25 Loader Styles (Updated with Animation and Positioning) */
+/* TEZAS'2K25 Loader Styles (Updated with One-Time Loading Line and Curved Edges) */
 #tezas-loader-container {
   position: fixed;
   top: 0;
@@ -371,7 +371,7 @@
   display: block;
   position: relative;
   width: 600px;
-  height: 220px; /* Adjusted height to fit text and line closely */
+  height: 220px; /* Adjusted to fit text and line closely */
   overflow: visible;
   background-color: #000;
 }
@@ -420,7 +420,7 @@
   z-index: 1;
 }
 
-/* Loading Line Below TEZAS (Animated and Closer) */
+/* Loading Line Below TEZAS (One-Time Animation with Curved Edges) */
 .tezasintro::after {
   content: "";
   position: absolute;
@@ -430,7 +430,8 @@
   width: 0;
   height: 4px;
   background: #e50914; /* Netflix red */
-  animation: loading-line 4.5s linear forwards; /* Ensures it loads over the full 4.5s TEZAS duration */
+  border-radius: 2px; /* Curved edges for better look */
+  animation: loading-line 4.5s linear forwards; /* One-time animation over 4.5s */
 }
 
 /* Main Site Styles (Unchanged) */
@@ -1312,7 +1313,7 @@ footer {
 
 @keyframes loading-line {
   0% { width: 0; }
-  100% { width: 400px; } /* Adjusted to match text length better */
+  100% { width: 400px; } /* Matches text length, with curved edges */
 }
 
 @keyframes flip-top {
