@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Hello this is my first web page!." />
   <title>Tezas 2k25 Symposium</title>
@@ -12,6 +11,7 @@
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" /> <!-- For Netflix-style font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet"/>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -90,11 +90,10 @@
     </div>
   </div>
 
-  <!-- TEZAS'2k25 Loader (New Animation from CodePen) -->
-  <div id="tezas-loader-container">
-    <div class="tezasintro">
-      <div class="tezas-full">TEZAS'2K25</div>
-    </div>
+  <!-- TEZAS'2K25 Loader (New Netflix-Style Animation) -->
+  <div id="tezas-loader-container" class="tezas-loader">
+    <div class="tezas-logo">TEZAS'2K25</div>
+    <div class="loader-progress"></div>
   </div>
 
   <!-- Main Site Content -->
@@ -257,7 +256,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -277,7 +276,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -297,7 +296,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -317,7 +316,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -337,7 +336,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -451,14 +450,14 @@
           netflixLoader.style.display = "none";
           tezasLoader.classList.add("visible");
 
-          // Step 2: TEZAS'2k25 loader for ~4.5 seconds
+          // Step 2: TEZAS'2K25 loader for 4.5 seconds (logo reveal 1.5s + progress 2s + fade 0.5s + 0.5s fade-in)
           setTimeout(() => {
             tezasLoader.classList.add("hidden");
             setTimeout(() => {
               tezasLoader.style.display = "none";
               mainContent.classList.add("visible");
             }, 500); // Match fade-out duration
-          }, 4500); // TEZAS loader duration (1.5s T + 2s text + 1s zoom)
+          }, 4500); // TEZAS loader duration (1.5s logo + 2s progress + 0.5s fade)
         }, 500); // Match fade-out duration
       }, 4000); // Netflix loader duration
     });
