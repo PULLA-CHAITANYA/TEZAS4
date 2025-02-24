@@ -342,8 +342,8 @@
   animation-duration: 5.5s;
 }
 
-/* TEZAS'2K25 Loader Styles (Updated with One-Time Loading Line and Curved Edges) */
-#tezas-loader-container {
+/* TEZAS'2K25 Loader Styles (New Netflix-Style Animation) */
+#tezas-loader-container.tezas-loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -354,6 +354,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
@@ -367,71 +368,51 @@
   opacity: 1;
 }
 
-.tezasintro {
-  display: block;
-  position: relative;
-  width: 600px;
-  height: 220px; /* Adjusted to fit text and line closely */
-  overflow: visible;
-  background-color: #000;
-}
-
-/* Initial "T" Formation */
-.tezasintro .t-initial {
-  position: absolute;
-  top: 40%; /* Adjusted to center with loading line closer below */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 4.5rem;
-  font-weight: 400;
-  color: transparent;
-  width: 55px;
-  height: 110px;
-  animation: t-form 1.5s ease-in forwards;
-  z-index: 2;
-}
-
-.tezasintro .t-initial::before {
-  content: "T";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  color: #fff;
-  background: #e50914; /* Netflix red */
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  animation: t-reveal 1.5s ease-in forwards;
-}
-
-/* Full Text ("EZAS'2K25") Emergence */
-.tezasintro .tezas-full {
-  position: absolute;
-  top: 40%; /* Adjusted to center with loading line closer below */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 4.5rem;
-  font-weight: 400;
-  color: #e50914; /* Netflix red */
+.tezas-logo {
+  color: #E50914;
+  font-size: 4.5em; /* Increased for prominence, matching Bebas Neue size */
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", "Arial Black", sans-serif; /* Netflix-style font with fallback */
+  text-shadow: 3px 3px 0 rgba(229, 9, 20, 0.5);
+  margin-bottom: 30px;
   opacity: 0;
-  animation: text-emerge 2s ease-out 1.5s forwards, tezas-zoom 1s ease-out 3.5s forwards;
-  z-index: 1;
+  animation: logoReveal 1.5s ease-out forwards;
 }
 
-/* Loading Line Below TEZAS (One-Time Animation with Curved Edges) */
-.tezasintro::after {
-  content: "";
-  position: absolute;
-  top: 60%; /* Moved closer to the text (below by ~20% of height) */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
+@keyframes logoReveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loader-progress {
+  width: 400px; /* Adjusted to match text length */
   height: 4px;
-  background: #e50914; /* Netflix red */
-  border-radius: 2px; /* Curved edges for better look */
-  animation: loading-line 4.5s linear forwards; /* One-time animation over 4.5s */
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-progress::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #E50914;
+  transform: translateX(-100%);
+  animation: load 2s cubic-bezier(0.4, 0, 0.2, 1) 1.5s forwards; /* Delayed to start after logo, runs once */
+}
+
+/* Adjusted timing to match 4.5s total TEZAS duration */
+@keyframes load {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
 }
 
 /* Main Site Styles (Unchanged) */
@@ -1288,78 +1269,4 @@ footer {
 @keyframes fading-lumieres-box {
   0% { background-color: rgba(228, 9, 19, 0.5); }
   100% { background-color: rgba(228, 9, 19, 0); }
-}
-
-@keyframes t-form {
-  0% { width: 0; height: 0; }
-  100% { width: 55px; height: 110px; }
-}
-
-@keyframes t-reveal {
-  0% { height: 0; }
-  100% { height: 100%; }
-}
-
-@keyframes text-emerge {
-  0% { opacity: 0; clip-path: inset(0 100% 0 0); }
-  50% { opacity: 1; clip-path: inset(0 0 0 0); }
-  100% { opacity: 1; clip-path: inset(0 0 0 0); }
-}
-
-@keyframes tezas-zoom {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  100% { transform: translate(-50%, -50%) scale(1.2); }
-}
-
-@keyframes loading-line {
-  0% { width: 0; }
-  100% { width: 400px; } /* Matches text length, with curved edges */
-}
-
-@keyframes flip-top {
-  0% { transform: rotateX(0deg); }
-  50%, 100% { transform: rotateX(-90deg); }
-}
-
-@keyframes flip-bottom {
-  0%, 50% { transform: rotateX(90deg); }
-  100% { transform: rotateX(0deg); }
-}
-
-@keyframes glitch {
-  0% { transform: skew(-3deg); }
-  10% { transform: skew(1deg); }
-  20% { transform: skew(2deg); }
-  30% { transform: skew(4deg); }
-  40% { transform: skew(4deg); }
-  50% { transform: skew(5deg); }
-  60% { transform: skew(-2deg); }
-  70% { transform: skew(0deg); }
-  80% { transform: skew(4deg); }
-  90% { transform: skew(2deg); }
-  100% { transform: skew(3deg); }
-}
-
-@keyframes glitch-mirror {
-  0% { clip-path: inset(4% 0%); transform: skew(0.81deg); }
-  5% { clip-path: inset(38% 0%); transform: skew(0.28deg); }
-  10% { clip-path: inset(163% 0%); transform: skew(0.67deg); }
-  15% { clip-path: inset(31% 0%); transform: skew(0.07deg); }
-  20% { clip-path: inset(168% 0%); transform: skew(0.53deg); }
-  25% { clip-path: inset(130% 0%); transform: skew(0.48deg); }
-  30% { clip-path: inset(92% 0%); transform: skew(0.68deg); }
-  35% { clip-path: inset(43% 0%); transform: skew(0.7deg); }
-  40% { clip-path: inset(18% 0%); transform: skew(0.5deg); }
-  45% { clip-path: inset(180% 0%); transform: skew(0.21deg); }
-  50% { clip-path: inset(71% 0%); transform: skew(0.56deg); }
-  55% { clip-path: inset(182% 0%); transform: skew(0.55deg); }
-  60% { clip-path: inset(66% 0%); transform: skew(0.65deg); }
-  65% { clip-path: inset(66% 0%); transform: skew(0.77deg); }
-  70% { clip-path: inset(43% 0%); transform: skew(0.56deg); }
-  75% { clip-path: inset(148% 0%); transform: skew(0.93deg); }
-  80% { clip-path: inset(169% 0%); transform: skew(0.46deg); }
-  85% { clip-path: inset(166% 0%); transform: skew(0.98deg); }
-  90% { clip-path: inset(53% 0%); transform: skew(0.81deg); }
-  95% { clip-path: inset(157% 0%); transform: skew(0.68deg); }
-  100% { clip-path: inset(182% 0%); transform: skew(0.22deg); }
 }
