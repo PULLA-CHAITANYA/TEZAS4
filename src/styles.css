@@ -342,7 +342,7 @@
   animation-duration: 5.5s;
 }
 
-/* TEZAS'2k25 Loader Styles (New Animation from CodePen) */
+/* TEZAS'2k25 Loader Styles (Updated and Rechecked) */
 #tezas-loader-container {
   position: fixed;
   top: 0;
@@ -372,7 +372,7 @@
   position: relative;
   width: 600px;
   height: 200px;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to ensure animation visibility */
   background-color: #000;
 }
 
@@ -389,6 +389,7 @@
   width: 50px;
   height: 100px;
   animation: t-form 1.5s ease-in forwards;
+  z-index: 2; /* Ensure "T" is above full text initially */
 }
 
 .tezasintro .t-initial::before {
@@ -399,7 +400,7 @@
   width: 100%;
   height: 0;
   color: #fff;
-  background: linear-gradient(to bottom, #ff6b6b, #e40913);
+  background: #e50914; /* Netflix original red */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   animation: t-reveal 1.5s ease-in forwards;
 }
@@ -413,9 +414,10 @@
   font-family: "Poppins", sans-serif;
   font-size: 4rem;
   font-weight: 700;
-  color: #fff;
+  color: #e50914; /* Netflix original red */
   opacity: 0;
   animation: text-emerge 2s ease-out 1.5s forwards, tezas-zoom 1s ease-out 3.5s forwards;
+  z-index: 1; /* Below "T" initially */
 }
 
 /* Main Site Styles */
@@ -553,12 +555,7 @@ body {
   width: 100%;
   height: 80vh;
   background: rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8) 0,
-    rgba(0, 0, 0, 0) 60%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 .hero__card {
