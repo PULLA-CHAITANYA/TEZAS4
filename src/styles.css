@@ -342,7 +342,7 @@
   animation-duration: 5.5s;
 }
 
-/* TEZAS'2k25 Loader Styles (Updated and Rechecked) */
+/* TEZAS'2K25 Loader Styles (Updated with Netflix Font, Larger Size, and Loading Line) */
 #tezas-loader-container {
   position: fixed;
   top: 0;
@@ -371,25 +371,25 @@
   display: block;
   position: relative;
   width: 600px;
-  height: 200px;
-  overflow: visible; /* Changed from hidden to ensure animation visibility */
+  height: 250px; /* Increased height to accommodate loading line */
+  overflow: visible;
   background-color: #000;
 }
 
 /* Initial "T" Formation */
 .tezasintro .t-initial {
   position: absolute;
-  top: 50%;
+  top: 40%; /* Adjusted to center with loading line below */
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Poppins", sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
+  font-family: "Bebas Neue", sans-serif; /* Netflix-style font */
+  font-size: 4.5rem; /* Increased from 4rem */
+  font-weight: 400; /* Bebas Neue is naturally bold */
   color: transparent;
-  width: 50px;
-  height: 100px;
+  width: 55px; /* Slightly wider for larger font */
+  height: 110px; /* Adjusted for larger font */
   animation: t-form 1.5s ease-in forwards;
-  z-index: 2; /* Ensure "T" is above full text initially */
+  z-index: 2;
 }
 
 .tezasintro .t-initial::before {
@@ -400,7 +400,7 @@
   width: 100%;
   height: 0;
   color: #fff;
-  background: #e50914; /* Netflix original red */
+  background: #e50914; /* Netflix red */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   animation: t-reveal 1.5s ease-in forwards;
 }
@@ -408,19 +408,32 @@
 /* Full Text ("EZAS'2K25") Emergence */
 .tezasintro .tezas-full {
   position: absolute;
-  top: 50%;
+  top: 40%; /* Adjusted to center with loading line */
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Poppins", sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
-  color: #e50914; /* Netflix original red */
+  font-family: "Bebas Neue", sans-serif; /* Netflix-style font */
+  font-size: 4.5rem; /* Increased from 4rem */
+  font-weight: 400;
+  color: #e50914; /* Netflix red */
   opacity: 0;
   animation: text-emerge 2s ease-out 1.5s forwards, tezas-zoom 1s ease-out 3.5s forwards;
-  z-index: 1; /* Below "T" initially */
+  z-index: 1;
 }
 
-/* Main Site Styles */
+/* Loading Line Below TEZAS */
+.tezasintro::after {
+  content: "";
+  position: absolute;
+  top: 70%; /* Positioned below the text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 4px;
+  background: #e50914; /* Netflix red */
+  animation: loading-line 4.5s linear forwards; /* Matches total TEZAS animation duration */
+}
+
+/* Main Site Styles (Unchanged) */
 #main-content {
   opacity: 0;
   transition: opacity 0.5s ease-in;
@@ -555,7 +568,12 @@ body {
   width: 100%;
   height: 80vh;
   background: rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
 }
 
 .hero__card {
@@ -1273,7 +1291,7 @@ footer {
 
 @keyframes t-form {
   0% { width: 0; height: 0; }
-  100% { width: 50px; height: 100px; }
+  100% { width: 55px; height: 110px; }
 }
 
 @keyframes t-reveal {
@@ -1290,6 +1308,11 @@ footer {
 @keyframes tezas-zoom {
   0% { transform: translate(-50%, -50%) scale(1); }
   100% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes loading-line {
+  0% { width: 0; }
+  100% { width: 300px; } /* Adjust width to match text length */
 }
 
 @keyframes flip-top {
