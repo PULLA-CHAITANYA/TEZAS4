@@ -256,7 +256,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -276,7 +276,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -296,7 +296,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -316,7 +316,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -336,7 +336,7 @@
             <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
             <div class="feature__backgroud__video__container">
               <video autoplay="" loop="" muted="" class="feature__backgroud__video">
-                <source src="src/videos/Connect With Progress.mp4" type="video/mp4" />
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -450,14 +450,14 @@
           netflixLoader.style.display = "none";
           tezasLoader.classList.add("visible");
 
-          // Step 2: TEZAS'2K25 loader for 4.5 seconds (logo reveal 1.5s + progress 2s + fade 0.5s + 0.5s fade-in)
+          // Step 2: TEZAS'2K25 loader for 2.5 seconds (1.5s logo + 2s progress, with overlap)
           setTimeout(() => {
             tezasLoader.classList.add("hidden");
             setTimeout(() => {
               tezasLoader.style.display = "none";
               mainContent.classList.add("visible");
             }, 500); // Match fade-out duration
-          }, 4500); // TEZAS loader duration (1.5s logo + 2s progress + 0.5s fade)
+          }, 2500); // TEZAS loader duration (2.5s total)
         }, 500); // Match fade-out duration
       }, 4000); // Netflix loader duration
     });
