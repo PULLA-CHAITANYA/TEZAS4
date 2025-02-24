@@ -342,7 +342,7 @@
   animation-duration: 5.5s;
 }
 
-/* TEZAS'2k25 Loader Styles (Fresh Animation) */
+/* TEZAS'2k25 Loader Styles (New Animation from CodePen) */
 #tezas-loader-container {
   position: fixed;
   top: 0;
@@ -404,7 +404,7 @@
   animation: t-reveal 1.5s ease-in forwards;
 }
 
-/* Full Text ("EZAS'2k25") Emergence */
+/* Full Text ("EZAS'2K25") Emergence */
 .tezasintro .tezas-full {
   position: absolute;
   top: 50%;
