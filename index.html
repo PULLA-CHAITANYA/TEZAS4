@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Your existing <head> content remains unchanged -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hello this is my first web page!." />
+  <title>Tezas 2k25 Symposium</title>
+  <link rel="icon" href="http://pngimg.com/uploads/netflix/small/netflix_PNG15.png"/>
+  <link rel="stylesheet" href="src/styles.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
 <body>
   <!-- Netflix "T" Loader (Original) -->
@@ -76,20 +89,355 @@
     </div>
   </div>
 
-  <!-- TEZAS'2k25 Loader (Fresh Animation) -->
+  <!-- TEZAS'2k25 Loader (New Animation from CodePen) -->
   <div id="tezas-loader-container">
     <div class="tezasintro">
       <div class="t-initial"></div>
-      <div class="tezas-full">TEZAS'2k25</div>
+      <div class="tezas-full">TEZAS'2K25</div>
     </div>
   </div>
 
-  <!-- Main Content (Your existing #main-content remains unchanged) -->
+  <!-- Main Site Content -->
   <div id="main-content">
-    <!-- Your existing main content here -->
+    <header>
+      <nav class="navbar">
+        <div class="navbar__brand"><a href="index.html">
+          <img src="src/images/netex.png" alt="logo" class="logo-img"/>
+        </a></div>
+
+        <div class="navbar__nav__items">
+          <div class="nav__item">
+            <div class="dropdown__container">
+              <i class="fas fa-globe"></i>
+              <select name="languages" id="languagesSelect" class="language__drop__down">
+                <option value="english" selected style="color: white;">English</option>
+                <option value="hindi" style="color: white;">हिन्दी</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="nav__item">
+            <button class="signin__button">Sign in</button>
+          </div>
+        </div>
+      </nav>
+      <video autoplay="" loop="" muted="" class="hello_video">
+        <source src="src/videos/Connect With Prompt.mp4" type="video/mp4"/>
+      </video>
+    </header>
+
+    <main>
+      <section class="instructions bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg shadow-[0_4px_30px_rgba(0,0,0,0.1)] max-w-full mx-auto flex justify-center items-center">
+        <div class="countdown flex flex-wrap justify-center gap-7">
+          <div class="time-section" id="days">
+            <div class="time-group flex gap-2">
+              <div class="time-segment">
+                <div class="segment-display">
+                  <div class="segment-display__top"></div>
+                  <div class="segment-display__bottom"></div>
+                  <div class="segment-overlay">
+                    <div class="segment-overlay__top"></div>
+                    <div class="segment-overlay__bottom"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="time-segment">
+                <div class="segment-display">
+                  <div class="segment-display__top"></div>
+                  <div class="segment-display__bottom"></div>
+                  <div class="segment-overlay">
+                    <div class="segment-overlay__top"></div>
+                    <div class="segment-overlay__bottom"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-center mt-2">Days</p>
+          </div>
+  
+          <div class="time-section" id="hours">
+            <div class="time-group flex gap-2">
+              <div class="time-segment">
+                <div class="segment-display">
+                  <div class="segment-display__top"></div>
+                  <div class="segment-display__bottom"></div>
+                  <div class="segment-overlay">
+                    <div class="segment-overlay__top"></div>
+                    <div class="segment-overlay__bottom"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="time-segment">
+                <div class="segment-display">
+                  <div class="segment-display__top"></div>
+                  <div class="segment-display__bottom"></div>
+                  <div class="segment-overlay">
+                    <div class="segment-overlay__top"></div>
+                    <div class="segment-overlay__bottom"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-center mt-2">Hours</p>
+          </div>
+  
+          <div class="time-section" id="minutes">
+            <div class="time-group flex gap-2">
+              <div class="time-segment">
+                <div class="segment-display">
+                  <div class="segment-display__top"></div>
+                  <div class="segment-display__bottom"></div>
+                  <div class="segment-overlay">
+                    <div class="segment-overlay__top"></div>
+                    <div class="segment-overlay__bottom"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="time-segment">
+                <div class="segment-display">
+                  <div class="segment-display__top"></div>
+                  <div class="segment-display__bottom"></div>
+                  <div class="segment-overlay">
+                    <div class="segment-overlay__top"></div>
+                    <div class="segment-overlay__bottom"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-center mt-2">Minutes</p>
+          </div>
+  
+          <div class="time-section" id="seconds">
+            <div class="time-group flex gap-2">
+              <div class="time-segment">
+                <div class="segment-display">
+                  <div class="segment-display__top"></div>
+                  <div class="segment-display__bottom"></div>
+                  <div class="segment-overlay">
+                    <div class="segment-overlay__top"></div>
+                    <div class="segment-overlay__bottom"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="time-segment">
+                <div class="segment-display">
+                  <div class="segment-display__top"></div>
+                  <div class="segment-display__bottom"></div>
+                  <div class="segment-overlay">
+                    <div class="segment-overlay__top"></div>
+                    <div class="segment-overlay__bottom"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="text-center mt-2">Seconds</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="events py-12 px-4 md:px-6">
+        <div class="mx-auto text-center">
+          <h1 class="glitch" data-text="EVENTS">EVENTS</h1>
+        </div>
+      </section>
+
+      <section class="features__container">
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">GET SET CODE</h3>
+            <h5 class="feature__sub__title">
+              Get Set Code is a fast-paced coding showdown with quizzes, puzzles, debugging, and challenges—think fast, code faster, and have fun!
+            </h5>
+            <br>
+            <button class="primary__button">
+              OPEN EVENT <i class="fal fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="feature__image__container">
+            <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
+            <div class="feature__backgroud__video__container">
+              <video autoplay="" loop="" muted="" class="feature__backgroud__video">
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">MEMO'RITA</h3>
+            <h5 class="feature__sub__title">
+              AI at the Speed of Thought! A fast-paced quiz testing AI basics and advanced concepts—think quick, adapt, and master AI!!
+            </h5>
+            <br>
+            <button class="primary__button">
+              OPEN EVENT <i class="fal fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="feature__image__container">
+            <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
+            <div class="feature__backgroud__video__container">
+              <video autoplay="" loop="" muted="" class="feature__backgroud__video">
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">Blaze Bot</h3>
+            <h5 class="feature__sub__title">
+              Run until you can! An AI-powered escape challenge where speed, skills, and strategy decide your way out brace for the ultimate chase!
+            </h5>
+            <br>
+            <button class="primary__button">
+              OPEN EVENT <i class="fal fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="feature__image__container">
+            <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
+            <div class="feature__backgroud__video__container">
+              <video autoplay="" loop="" muted="" class="feature__backgroud__video">
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">BEAT THE CLOCK</h3>
+            <h5 class="feature__sub__title">
+              Three intense rounds challenge your team to decode, guess, and adapt under pressure—crack codes, give clever hints, and tackle surprises before time runs out!
+            </h5>
+            <br>
+            <button class="primary__button">
+              OPEN EVENT <i class="fal fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="feature__image__container">
+            <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
+            <div class="feature__backgroud__video__container">
+              <video autoplay="" loop="" muted="" class="feature__backgroud__video">
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">PAPYRUS</h3>
+            <h5 class="feature__sub__title">
+              Speak Your Ideas, Shape the Future! Share bold ideas, inspire change, and make an impact—no limits, just pure brilliance!
+            </h5>
+            <br>
+            <button class="primary__button">
+              OPEN EVENT <i class="fal fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="feature__image__container">
+            <img src="src/images/tv.png" alt="Feature image" class="feature__image" />
+            <div class="feature__backgroud__video__container">
+              <video autoplay="" loop="" muted="" class="feature__backgroud__video">
+                <source src="src/videos/Connect With Prompt.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title" style="font-family: 'Arial', sans-serif; color:white; margin-bottom: 1rem;">General Instructions</h3>
+            <div class="space-y-4" style="color: #e5e7eb; font-family: 'Arial', sans-serif;">
+              <div class="flex gap-6 items-start">
+                <div class="flex-1 event-details" style="background: rgba(236, 229, 229, 0.133); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid rgba(255, 255, 255, 0.1);">
+                  <div class="space-y-2" style="font-family: 'Arial', sans-serif;">
+                    <p style="margin: 0.5rem 0;"><span style="font-weight: 600; color: #fff;">Event Date:</span> 17th MARCH 2025</p>
+                    <p style="margin: 0.5rem 0;"><span style="font-weight: 600; color: #fff;">Venue:</span> Department of AI & DS, RMKCET</p>
+                    <p style="margin: 0.5rem 0;"><span style="font-weight: 600; color: #fff;">Timing:</span> All participants should report at the venue by 8:30 AM</p>
+                    <p style="margin: 0.5rem 0;"><span style="font-weight: 600; color: #fff;">Note:</span> Outside food is not allowed.</p>
+                    <p style="margin: 0.5rem 0;"><span style="font-weight: 600; color: #fff;">Dress Code:</span> Formal attire is mandatory.</p>
+                    <p style="margin: 0.5rem 0;"><span style="font-weight: 600; color: #fff;">Guidelines:</span> Participants must follow the rules and regulations of the event.</p>
+                    <p style="color: #fca5a5; margin: 0.5rem 0;"><span style="font-weight: 600;">Registration:</span> Please note that No on-spot registration will not be available. Limited seats available register in</p>
+                    <p style="color: #86efac; margin: 0.5rem 0;"><span style="font-weight: 600;">Prizes:</span> Exciting cash prizes await the winners and runners-up in each category. Don't miss out on the chance to showcase your skills and compete for prestigious rewards!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="FAQ__list__container">
+        <h1 class="FAQ__heading">Frequently Asked Questions</h1>
+        <div class="FAQ__list">
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              What is TEZAS 2k25?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                TEZAS 2k25 is an exciting tech-driven competition conducted by the 
+                Department of Artificial Intelligence and Data Science of RMK College of Engineering and Technology.
+                It features coding challenges, AI quizzes, problem-solving rounds, and thrilling escape room experiences, 
+                designed to test speed, strategy, and creativity in a fun and engaging way!
+              </p>
+            </div>
+          </div>
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              Is there any participation fee?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                No, there is no participation fee! The event is completely free for all participants.
+              </p>
+            </div>
+          </div>
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              Will food be provided?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                Yes, food will be provided for all participants.
+              </p>
+            </div>
+          </div>
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              Is there a bus facility?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                Yes, participants are asked to use the college bus facility for convenient transportation to and from the event.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="Contact-Us">
+      <div class="footer-container">
+        <div id="contact" class="footer-section contact">
+          <h2>Student Coordinators</h2>
+          <p style="margin-bottom: 0px;">Aravindan P B</p>
+          <div class="phone-no">
+            <p><a href="tel:+91 6369890793">+91 6369890793</a></p>
+          </div>
+          <br>
+          <p style="margin-bottom: 0px;">Aswini C S</p>
+          <div class="phone-no">
+            <p><a href="tel:+91 9500561304">+91 9500561304</a></p>
+          </div>
+        </div>
+        <div class="footer-section socials">
+          <h2>Follow Us On</h2>
+          <a href="https://www.instagram.com/airo_4.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="src/images/insta-icon.png" alt="Instagram" width="40" height="40"></a>
+          <a href="https://www.instagram.com/airo_4.0?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="src/images/insta-icon.png" alt="Instagram" width="40" height="40"></a>
+        </div>
+      </div>
+    </footer>
   </div>
 
-  <!-- Updated Script -->
+  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const netflixLoader = document.getElementById("netflix-loader-container");
@@ -103,7 +451,7 @@
           netflixLoader.style.display = "none";
           tezasLoader.classList.add("visible");
 
-          // Step 2: TEZAS'2k25 loader for 4 seconds
+          // Step 2: TEZAS'2k25 loader for ~4.5 seconds
           setTimeout(() => {
             tezasLoader.classList.add("hidden");
             setTimeout(() => {
@@ -114,7 +462,73 @@
         }, 500); // Match fade-out duration
       }, 4000); // Netflix loader duration
     });
+
+    // Countdown script
+    const targetDate = new Date('2025-03-17T00:00:00');
+  
+    function getTimeSegmentElements(segmentElement) {
+      return {
+        segmentDisplayTop: segmentElement.querySelector('.segment-display__top'),
+        segmentDisplayBottom: segmentElement.querySelector('.segment-display__bottom'),
+        segmentOverlay: segmentElement.querySelector('.segment-overlay'),
+        segmentOverlayTop: segmentElement.querySelector('.segment-overlay__top'),
+        segmentOverlayBottom: segmentElement.querySelector('.segment-overlay__bottom')
+      };
+    }
+  
+    function updateSegmentValues(displayElement, overlayElement, value) {
+      displayElement.textContent = value;
+      overlayElement.textContent = value;
+    }
+  
+    function updateTimeSegment(segmentElement, timeValue) {
+      const elements = getTimeSegmentElements(segmentElement);
+      if (parseInt(elements.segmentDisplayTop.textContent, 10) === timeValue) return;
+  
+      elements.segmentOverlay.classList.add('flip');
+      updateSegmentValues(elements.segmentDisplayTop, elements.segmentOverlayBottom, timeValue);
+  
+      const finishAnimation = () => {
+        elements.segmentOverlay.classList.remove('flip');
+        updateSegmentValues(elements.segmentDisplayBottom, elements.segmentOverlayTop, timeValue);
+        elements.segmentOverlay.removeEventListener('animationend', finishAnimation);
+      };
+  
+      elements.segmentOverlay.addEventListener('animationend', finishAnimation);
+    }
+  
+    function updateTimeSection(sectionID, timeValue) {
+      const section = document.getElementById(sectionID);
+      const segments = section.querySelectorAll('.time-segment');
+      updateTimeSegment(segments[0], Math.floor(timeValue / 10));
+      updateTimeSegment(segments[1], timeValue % 10);
+    }
+  
+    function getTimeRemaining(target) {
+      const total = target - Date.now();
+      const seconds = Math.floor((total / 1000) % 60);
+      const minutes = Math.floor((total / 1000 / 60) % 60);
+      const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+      const days = Math.floor(total / (1000 * 60 * 60 * 24));
+  
+      return { days, hours, minutes, seconds, total };
+    }
+  
+    function updateAllSegments() {
+      const t = getTimeRemaining(targetDate);
+      updateTimeSection('days', t.days);
+      updateTimeSection('hours', t.hours);
+      updateTimeSection('minutes', t.minutes);
+      updateTimeSection('seconds', t.seconds);
+      return t.total <= 0;
+    }
+  
+    const countdownTimer = setInterval(() => {
+      if (updateAllSegments()) clearInterval(countdownTimer);
+    }, 1000);
+  
+    updateAllSegments();
   </script>
-  <!-- Your existing countdown script and <script src="src/index.js"> remain below -->
+  <script src="src/index.js"></script>
 </body>
 </html>
