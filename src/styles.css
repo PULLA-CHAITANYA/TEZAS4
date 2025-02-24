@@ -342,7 +342,7 @@
   animation-duration: 5.5s;
 }
 
-/* TEZAS'2K25 Loader Styles (Updated with Netflix Font, Larger Size, and Loading Line) */
+/* TEZAS'2K25 Loader Styles (Updated with Animation and Positioning) */
 #tezas-loader-container {
   position: fixed;
   top: 0;
@@ -371,7 +371,7 @@
   display: block;
   position: relative;
   width: 600px;
-  height: 250px; /* Increased height to accommodate loading line */
+  height: 220px; /* Adjusted height to fit text and line closely */
   overflow: visible;
   background-color: #000;
 }
@@ -379,15 +379,15 @@
 /* Initial "T" Formation */
 .tezasintro .t-initial {
   position: absolute;
-  top: 40%; /* Adjusted to center with loading line below */
+  top: 40%; /* Adjusted to center with loading line closer below */
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Bebas Neue", sans-serif; /* Netflix-style font */
-  font-size: 4.5rem; /* Increased from 4rem */
-  font-weight: 400; /* Bebas Neue is naturally bold */
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 400;
   color: transparent;
-  width: 55px; /* Slightly wider for larger font */
-  height: 110px; /* Adjusted for larger font */
+  width: 55px;
+  height: 110px;
   animation: t-form 1.5s ease-in forwards;
   z-index: 2;
 }
@@ -408,11 +408,11 @@
 /* Full Text ("EZAS'2K25") Emergence */
 .tezasintro .tezas-full {
   position: absolute;
-  top: 40%; /* Adjusted to center with loading line */
+  top: 40%; /* Adjusted to center with loading line closer below */
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: "Bebas Neue", sans-serif; /* Netflix-style font */
-  font-size: 4.5rem; /* Increased from 4rem */
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4.5rem;
   font-weight: 400;
   color: #e50914; /* Netflix red */
   opacity: 0;
@@ -420,17 +420,17 @@
   z-index: 1;
 }
 
-/* Loading Line Below TEZAS */
+/* Loading Line Below TEZAS (Animated and Closer) */
 .tezasintro::after {
   content: "";
   position: absolute;
-  top: 70%; /* Positioned below the text */
+  top: 60%; /* Moved closer to the text (below by ~20% of height) */
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 4px;
   background: #e50914; /* Netflix red */
-  animation: loading-line 4.5s linear forwards; /* Matches total TEZAS animation duration */
+  animation: loading-line 4.5s linear forwards; /* Ensures it loads over the full 4.5s TEZAS duration */
 }
 
 /* Main Site Styles (Unchanged) */
@@ -1312,7 +1312,7 @@ footer {
 
 @keyframes loading-line {
   0% { width: 0; }
-  100% { width: 300px; } /* Adjust width to match text length */
+  100% { width: 400px; } /* Adjusted to match text length better */
 }
 
 @keyframes flip-top {
